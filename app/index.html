@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="testApp">
+	<head>
+		<meta charset="UTF-8">
+		<title>Test Web App</title>
+<!--		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />-->
+		<link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+		<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+		<script type="text/javascript" src="bower_components/angular-resource/angular-resource.js"></script>
+		<script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
+		<script type="text/javascript" src="bower_components/angular-aria/angular-aria.js"></script>
+		<script type="text/javascript" src="bower_components/angular-material/angular-material.js"></script>
+		<script type="text/javascript" src="bower_components/angular-material-icons/angular-material-icons.js"></script>
+<!--		<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
+		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript" src="js/controllers.js"></script>
+		<script type="text/javascript" src="js/services.js"></script>
+		<script type="text/javascript" src="js/directives.js"></script>
+	</head>
+	<body layout="row" ng-controller="navigationCtrl as nav">
+        <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" class="site-sidenav md-sidenav-left md-whiteframe-z2 ng-isolate-scope" md-component-id="left">
+            <md-toolbar class="md-whiteframe-glow-z2 md-default-theme">
+                <h1 class="md-toolbar-tools">
+                    <a ng-href="#/" layout="row" flex class="webapp-logo">
+                        <md-icon md-svg-src="images/icons/main_logo_48px.svg" class="ng-isolate-scope md-default-theme" aria-hidden="true">
+                            
+                        </md-icon>
+                        <div class="webapp-logotype">Web App Test</div>
+                    </a>
+                </h1>
+            </md-toolbar>
+            <md-content flex role="navigation" class="md-default-theme">
+                <ul class="main-menu">
+                    <li class="ng-scope">
+                        <menu-link section="page" class="ng-isolate-scope" layout="row">
+                            <md-button ng-href="#/home" class="md-button md-default-theme">
+                                <span class="ng-binding ng-scope">Home</span>
+                            </md-button>
+                            <div class="md-ripple-container"></div>
+                        </menu-link>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <menu-toggle section="page" class="ng-isolate-scope" layout="row">
+                            <md-button ng-href="#/portfolio" ng-click="toggleSubmenu('portfolio')" class="md-button md-default-theme">
+                                <div flex layout="row">
+                                    <span class="ng-binding ng-scope">Portfolio</span>
+                                    <span flex></span>
+                                    <span aria-hidden="true" class="md-toggle-icon" ng-class="{'toggled' : isOpen('portfolio')}">
+                                        <md-icon md-svg-src="md-toggle-arrow"></md-icon>
+                                    </span>
+                                </div>
+                            </md-button>
+                            <div class="md-ripple-container"></div>
+                            <ul ng-show="isOpen('portfolio')" id="webapp-menu-Portfolio" class="menu-toggle-list dropdown-menu" aria-hidden="false">
+                                <li ng-repeat="project in projects">
+                                    <menu-link section="page" class="ng-isolate-scope" layout="row">
+                                        <md-button ng-href="{{project.id}}" class="md-button md-default-theme">
+                                            <span class="ng-binding ng-scope">Home</span>
+                                        </md-button>
+                                        <div class="md-ripple-container"></div>
+                                    </menu-link>
+                                </li>
+                            </ul>
+                        </menu-link>
+                    </li>
+                </ul>
+           </md-content> 
+        </md-sidenav>
+        <div flex layout="column" role="main">
+            <md-toolbar class="md-whiteframe-glow-z2 md-default-theme">
+                <div class="md-toolbar-tools" ng-click="nav.toggleMenu()">
+                    <button class="md-icon-button md-button" hide-gt-sm aria-label="Show Menu">
+                        <md-icon md-svg-src="images/icons/ic_menu_24px.svg" aria-hidden="true"></md-icon>
+                    </button>
+                    <h1 class="md-toolbar-tools">Web App Test</h1>
+                </div>                 
+            </md-toolbar>
+            <md-content flex id="content" ng-view md-scroll-y layout-padding>
+            </md-content>
+        </div>
+	</body>
+</html>

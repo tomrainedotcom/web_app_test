@@ -1,0 +1,6 @@
+<h1>{{pageName}} : Project #{{project.id}}</h1>
+<ul class="list-unstyle">
+	<li ng-repeat="project in projects">
+		<a href="/portfolio/{{ project.id }}">{{project.name}}</a>
+	</li>
+</ul>
