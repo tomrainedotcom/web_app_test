@@ -1,64 +1,36 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'c:\\Program Files\\nodejs\\node.exe',
-1 verbose cli   'c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
-1 verbose cli   'install' ]
-2 info using npm@1.4.28
-3 info using node@v0.10.35
-4 warn package.json test-web-app@0.0.0 No README data
-5 verbose readDependencies using package.json deps
-6 verbose install where, deps [ 'c:\\xampp\\htdocs\\POC\\web_app_test',
-6 verbose install   [ 'karma',
-6 verbose install     'karma-chrome-launcher',
-6 verbose install     'karma-jasmine',
-6 verbose install     'protractor',
-6 verbose install     'http-server',
-6 verbose install     'tmp',
-6 verbose install     'bower',
-6 verbose install     'shelljs' ] ]
-7 info preinstall test-web-app@0.0.0
-8 verbose readDependencies using package.json deps
-9 verbose already installed skipping karma@^0.12.16 c:\xampp\htdocs\POC\web_app_test
-10 verbose already installed skipping karma-chrome-launcher@^0.1.4 c:\xampp\htdocs\POC\web_app_test
-11 verbose already installed skipping karma-jasmine@^0.1.5 c:\xampp\htdocs\POC\web_app_test
-12 verbose already installed skipping protractor@~1.0.0 c:\xampp\htdocs\POC\web_app_test
-13 verbose already installed skipping http-server@^0.6.1 c:\xampp\htdocs\POC\web_app_test
-14 verbose already installed skipping tmp@0.0.23 c:\xampp\htdocs\POC\web_app_test
-15 verbose already installed skipping bower@^1.3.1 c:\xampp\htdocs\POC\web_app_test
-16 verbose already installed skipping shelljs@^0.2.6 c:\xampp\htdocs\POC\web_app_test
-17 silly resolved []
-18 info build c:\xampp\htdocs\POC\web_app_test
-19 verbose linkStuff [ false, false, false, 'c:\\xampp\\htdocs\\POC' ]
-20 info linkStuff test-web-app@0.0.0
-21 verbose linkBins test-web-app@0.0.0
-22 verbose linkMans test-web-app@0.0.0
-23 verbose rebuildBundles test-web-app@0.0.0
-24 verbose rebuildBundles [ '.bin',
-24 verbose rebuildBundles   'bower',
-24 verbose rebuildBundles   'http-server',
-24 verbose rebuildBundles   'karma',
-24 verbose rebuildBundles   'karma-chrome-launcher',
-24 verbose rebuildBundles   'karma-jasmine',
-24 verbose rebuildBundles   'protractor',
-24 verbose rebuildBundles   'shelljs',
-24 verbose rebuildBundles   'tmp' ]
-25 info install test-web-app@0.0.0
-26 info postinstall test-web-app@0.0.0
-27 verbose unsafe-perm in lifecycle true
-28 info test-web-app@0.0.0 Failed to exec postinstall script
-29 error test-web-app@0.0.0 postinstall: `bower install`
-29 error Exit status 1
-30 error Failed at the test-web-app@0.0.0 postinstall script.
-30 error This is most likely a problem with the test-web-app package,
-30 error not with npm itself.
-30 error Tell the author that this fails on your system:
-30 error     bower install
-30 error You can get their info via:
-30 error     npm owner ls test-web-app
-30 error There is likely additional logging output above.
-31 error System Windows_NT 6.2.9200
-32 error command "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
-33 error cwd c:\xampp\htdocs\POC\web_app_test
-34 error node -v v0.10.35
-35 error npm -v 1.4.28
-36 error code ELIFECYCLE
-37 verbose exit [ 1, true ]
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'start' ]
+2 info using npm@2.7.4
+3 info using node@v0.12.2
+4 verbose run-script [ 'prestart', 'start', 'poststart' ]
+5 info prestart test-web-app@0.0.0
+6 verbose unsafe-perm in lifecycle true
+7 info start test-web-app@0.0.0
+8 verbose unsafe-perm in lifecycle true
+9 info test-web-app@0.0.0 Failed to exec start script
+10 verbose stack Error: test-web-app@0.0.0 start: `http-server -a 0.0.0.0 -p 8000`
+10 verbose stack Exit status 126
+10 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:213:16)
+10 verbose stack     at EventEmitter.emit (events.js:110:17)
+10 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:14:12)
+10 verbose stack     at ChildProcess.emit (events.js:110:17)
+10 verbose stack     at maybeClose (child_process.js:1015:16)
+10 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1087:5)
+11 verbose pkgid test-web-app@0.0.0
+12 verbose cwd /Users/Tom/apps/web_app_test
+13 error Darwin 14.3.0
+14 error argv "node" "/usr/local/bin/npm" "start"
+15 error node v0.12.2
+16 error npm  v2.7.4
+17 error code ELIFECYCLE
+18 error test-web-app@0.0.0 start: `http-server -a 0.0.0.0 -p 8000`
+18 error Exit status 126
+19 error Failed at the test-web-app@0.0.0 start script 'http-server -a 0.0.0.0 -p 8000'.
+19 error This is most likely a problem with the test-web-app package,
+19 error not with npm itself.
+19 error Tell the author that this fails on your system:
+19 error     http-server -a 0.0.0.0 -p 8000
+19 error You can get their info via:
+19 error     npm owner ls test-web-app
+19 error There is likely additional logging output above.
+20 verbose exit [ 1, true ]
